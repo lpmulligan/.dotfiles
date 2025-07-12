@@ -10,7 +10,7 @@ curl -sfLo ~/.local/bin/yadm https://raw.githubusercontent.com/yadm-dev/yadm/mas
 chmod a+x ~/.local/bin/yadm
 
 # Clone dotfiles repository
-~/.local/bin/yadm clone --bootstrap -f git clone https://github.com/lpmulligan/.dotfiles.git
+~/.local/bin/yadm clone --bootstrap -f git clone curl -sL https://raw.githubusercontent.com/lpmulligan/.dotfiles/raw/main/pre_bootstrap.sh | bash
 
 # Clean up by removing yadm
 rm -rf ~/.local/bin/yadm
