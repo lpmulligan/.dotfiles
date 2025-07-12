@@ -18,7 +18,7 @@ LPM dotfile configurations
 To install yadm temporarily, then clone the .dotfiles repo and bootstrap the system, run the following command:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/lpmulligan/.dotfiles/refs/heads/main/pre_bootstrap.sh | bash
+curl -sL https://github.com/lpmulligan/.dotfiles/raw/main/pre_bootstrap.sh | bash
 ```
 
 #### Update plugins with submodules
