@@ -35,7 +35,11 @@ if (OS == "Darwin")
     fi
 
     echo ">>> Installing brew packages.."
-    /opt/homebrew/bin/brew bundle install --file ~/Brewfile
+    if [ -f ~/.config/macOS/Brewfile ]
+        /opt/homebrew/bin/brew bundle install --file ~/.config/macOS/Brewfile
+    else
+        echo "No Brewfile found!"
+    fi # end Brewfile
 fi # end macOS
 
 # sdkman
