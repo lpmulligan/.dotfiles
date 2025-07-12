@@ -35,8 +35,7 @@ if (OS == "Darwin")
     fi
 
     echo ">>> Installing brew packages.."
-    if -f ~/.config/macOS/Brewfile
-    then
+    if [-f ~/.config/macOS/Brewfile]; then
         /opt/homebrew/bin/brew bundle install --file ~/.config/macOS/Brewfile
     else
         echo "No Brewfile found!"
