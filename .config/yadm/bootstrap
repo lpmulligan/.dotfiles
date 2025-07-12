@@ -16,6 +16,8 @@ system_type=$(uname -s)
 
 # macOS
 if [ "$system_type" = "Darwin" ]; then
+    echo "Deploying on macOS/Darwin"
+
     # requires xcode and tools!
     if ! command -v xcode-select -p &> /dev/null
     then
