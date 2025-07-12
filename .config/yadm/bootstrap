@@ -13,28 +13,30 @@ echo "Init submodules"
 ~/.local/bin/yadm submodule update --recursive --init
 
 
-# requires xcode and tools!
-if ! command -v xcode-select -p &> /dev/null
-then
-    echo "XCode must be installed! (run xcode-select --install)"
-    xcode-select --install
-else
-    echo "Xcode already installed"
-fi
+# macOS
+if (OS == "Darwin")
+    # requires xcode and tools!
+    if ! command -v xcode-select -p &> /dev/null
+    then
+        echo "XCode must be installed! (run xcode-select --install)"
+        xcode-select --install
+    else
+        echo "Xcode already installed"
+    fi
 
-# homebrew
-if ! command -v /opt/homebrew/bin/brew &> /dev/null
-then
-    echo 'brew must be installed! (/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")'
-else
-    echo "Homebrew already installed. Getting updates..."
-    /opt/homebrew/bin/brew update
-    /opt/homebrew/bin/brew doctor
-fi
+    # homebrew
+    if ! command -v /opt/homebrew/bin/brew &> /dev/null
+    then
+        echo 'brew must be installed! (/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")'
+    else
+        echo "Homebrew already installed. Getting updates..."
+        /opt/homebrew/bin/brew update
+        /opt/homebrew/bin/brew doctor
+    fi
 
-
-echo ">>> Installing brew packages.."
-/opt/homebrew/bin/brew bundle install --file ~/Brewfile
+    echo ">>> Installing brew packages.."
+    /opt/homebrew/bin/brew bundle install --file ~/Brewfile
+fi # end macOS
 
 # sdkman
 #curl -s "https://get.sdkman.io?rcupdate=false" | bash
