@@ -13,6 +13,7 @@ chmod a+x ~/.local/bin/yadm
 ~/.local/bin/yadm clone --bootstrap -f https://github.com/lpmulligan/.dotfiles.git
 
 # Clean up by removing yadm
+sleep 7
 rm -rf ~/.local/bin/yadm
 
 echo "Dotfiles setup completed!"
