@@ -44,16 +44,20 @@ if [ "$system_type" = "Darwin" ]; then
         echo "No Brewfile found!"
     fi # end Brewfile
 
-    # Install Fish Plugins
-    fish_shell=$(which fish)
-    if ! command -v $fish_shell &> /dev/null
-    then
-        echo 'Fish Shell not installed!'
-    else
-        echo "Fish Shell installed...Installing packages"
-        $fish_shell -c "fisher install miralize/homebrew-aliases-fish"
-    fi # End fish shell
+    
 fi # end macOS
+
+
+# Install Fish Plugins
+# Add if macOS or Linux switch
+# fish_shell=$(which fish)
+# if ! command -v $fish_shell &> /dev/null
+# then
+#     echo 'Fish Shell not installed!'
+# else
+#     echo "Fish Shell installed...Installing packages"
+#     $fish_shell -ci "fisher install miralize/homebrew-aliases-fish"
+# fi # End fish shell
 
 # done
 echo "Bootstrapping complete"
