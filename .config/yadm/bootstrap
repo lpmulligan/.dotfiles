@@ -44,6 +44,15 @@ if [ "$system_type" = "Darwin" ]; then
         echo "No Brewfile found!"
     fi # end Brewfile
 
+    # iTerm2
+    iterm2_installed=$(brew list | grep iterm2)
+    if [ -n $iterm2_installed ] >/dev/null 2>&1; then
+     echo "iTerm2 Installed"
+        if [ -d "$HOME/.iterm2" ]; then
+            echo "Setting iTerm preference folder"
+            defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+         fi
+    fi # End iTerm2
     
 fi # end macOS
 
