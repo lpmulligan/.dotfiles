@@ -56,7 +56,7 @@ fi # end macOS
 #     echo 'Fish Shell not installed!'
 # else
 #     echo "Fish Shell installed...Installing packages"
-#     $fish_shell -ci "fisher install miralize/homebrew-aliases-fish"
+#     $fish_shell -c "fisher install miralize/homebrew-aliases-fish"
 # fi # End fish shell
 
 # done
