@@ -13,7 +13,7 @@ echo "Init submodules"
 ~/.local/bin/yadm submodule update --recursive --init
 
 system_type=$(uname -s)
-distro=$( grep ^ID /etc/os-release 2>/dev/null| cut -d= -f2-)
+distro=$(grep ^ID /etc/os-release 2>/dev/null| cut -d= -f2-)
 
 # macOS
 if [ "$system_type" = "Darwin" ]; then
