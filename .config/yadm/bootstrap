@@ -56,6 +56,11 @@ if [ "$system_type" = "Darwin" ]; then
     
 fi # end macOS
 
+# WSL Linux
+if [ "$system_type" = "Linux" ]; then
+    echo "Deploying on WSL Linux"
+fi # end WSL
+
 
 # Install Fish Plugins
 # Add if macOS or Linux switch
